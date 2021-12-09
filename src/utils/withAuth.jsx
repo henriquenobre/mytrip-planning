@@ -1,16 +1,14 @@
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/router'
 import { ElementType, useEffect } from 'react'
 
-export default function withAuth(WrappedComponent: ElementType) {
-  const Wrapper = (props: any) => {
-    const route = useRouter()
+export default function withAuth(WrappedComponent) {
+  const Wrapper = (props) => {
 
     useEffect(() => {
       const token = Cookies.get('token')
 
       if (!token) {
-        route.push('/')
+        console.log('rota')
       }
     }, [])
 

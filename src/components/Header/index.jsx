@@ -1,16 +1,14 @@
 import * as S from  './style'
-import ProfileImg from 'components/ProfileImg'
-import { useRouter } from 'next/router'
+import ProfileImg from '../ProfileImg/ProfileImg'
 
-const Header: React.FC = () => {
-  const route = useRouter()
+const Header = () => {
   return (
     <S.ContainerFixedTop>
       <S.ContainerLogo>
         <img src="img/iconLogo.png" alt="" />
       </S.ContainerLogo>
       <S.ContainerMenu>
-        <S.ContainerFlexIcon onClick={() => route.push('/Feed')}>
+        <S.ContainerFlexIcon >
           <S.IconImage src="img/iconFeed.svg" />
           <strong>FEED</strong>
         </S.ContainerFlexIcon>
@@ -27,7 +25,7 @@ const Header: React.FC = () => {
         <img src="img/iconSearch.svg" />
         <S.Input placeholder="Pesquisa" />
       </S.ContainerSearch>
-      <S.ContainerProfile onClick={() => route.push('/Profile')}>
+      <S.ContainerProfile >
         <ProfileImg />
       </S.ContainerProfile>
     </S.ContainerFixedTop>
