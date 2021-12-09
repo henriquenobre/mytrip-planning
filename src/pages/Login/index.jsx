@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react'
-import { useTheme, Theme } from 'contexts/ThemeContext'
+/* import { useTheme, Theme } from 'contexts/ThemeContext' */
 import * as S from './styles'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
-import Field from 'components/Field'
+import Field from '../../components/Field/Field'
 import { Formik, Form } from 'formik'
-import * as Schema from 'utils/schema'
+import * as Schema from '../../utils/schema'
+import Logo from '../../img/LogoLogin.png'
 
 
-const Login: React.FC = () => {
-  const { theme, setTheme } = useTheme()
-  const route = useRouter()
-  const initialValues: UserValues = { email: '', password: '' }
+const Login = () => {
+ /*  const { theme, setTheme } = useTheme() */
+  const initialValues = { email: '', password: '' }
 
-  useEffect(() => {
+  /* useEffect(() => {
     setTheme(Theme.Dark)
-    console.log('This is my context Theme ', theme)
-  }, [])
+    
+  }, []) */
 
   const handleSignIn = (values) => {
     const { email, password } = values
@@ -26,7 +26,7 @@ const Login: React.FC = () => {
       Cookie.set('token', 'token-here', {
         expires: addDays(new Date(), 1)
       })
-      route.push('/Feed')
+      /* route.push('/Feed') */
     } else {
       alert('Usuário ou senha digitado incorretamente')
     }
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
       <S.ContainerLeft>
         {isSiginVisible ? (
           <>
-            <S.LogoDisplayColumn src="img/LogoLogin.png" />
+            <S.LogoDisplayColumn src={Logo} />
             <S.ContainerTitle>
               <S.SubTitle>Bem vindo a sua</S.SubTitle>
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
@@ -76,7 +76,7 @@ const Login: React.FC = () => {
             <S.ContainerAction>
               <S.ContainerRow style={{ marginTop: '15px' }}>
                 <p>Novo no MyTrip?</p>
-                <a
+                <p 
                   onClick={() => {
                     setIsSiginVisible(false)
                   }}
@@ -87,13 +87,13 @@ const Login: React.FC = () => {
                   }}
                 >
                   Cadastre-se
-                </a>
+                </p>
               </S.ContainerRow>
             </S.ContainerAction>
           </>
         ) : (
           <>
-            <S.LogoDisplayColumn src="img/LogoLogin.png" />
+            <S.LogoDisplayColumn src={Logo} />
             <S.ContainerTitle>
               <S.SubTitle>Bem vindo a sua</S.SubTitle>
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
@@ -151,7 +151,7 @@ const Login: React.FC = () => {
             </>
           )}
         </S.ContainerButton>
-        <S.LogoImage src="img/LogoLogin.png" alt="Imagem Logo" />
+        <S.LogoImage src={Logo} alt="Imagem Logo" />
       </S.ContainerRight>
     </S.Wrapper>
   )
