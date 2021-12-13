@@ -70,7 +70,7 @@ export const Span = styled.span`
   }
 `
 
-export const ContainerForm = styled.form`
+export const ContainerForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

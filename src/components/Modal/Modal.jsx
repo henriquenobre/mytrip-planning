@@ -1,9 +1,7 @@
 import * as S from './style'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-const ModalTable: React.FC = ({ closeModal, setExpensesValue }) => {
-  const route = useRouter()
+const ModalTable = ({ closeModal, setExpensesValue }) => {
   const [description, setDescription] = useState('')
   const [value, setValue] = useState('')
   const [date, setDate] = useState('')

@@ -7,11 +7,12 @@ import Field from '../../components/Field/Field'
 import { Formik, Form } from 'formik'
 import * as Schema from '../../utils/schema'
 import Logo from '../../img/LogoLogin.png'
-
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
  /*  const { theme, setTheme } = useTheme() */
   const initialValues = { email: '', password: '' }
+  const navigate = useNavigate()
 
   /* useEffect(() => {
     setTheme(Theme.Dark)
@@ -26,7 +27,7 @@ const Login = () => {
       Cookie.set('token', 'token-here', {
         expires: addDays(new Date(), 1)
       })
-      /* route.push('/Feed') */
+       navigate('/Feed') 
     } else {
       alert('Usuário ou senha digitado incorretamente')
     }

@@ -1,7 +1,10 @@
 import * as S from './style'
 import ProfileImg from '../ProfileImg/ProfileImg'
+import { useNavigate } from 'react-router-dom'
+
 
 const SideBar = () => {
+  const navigate = useNavigate()
 
   return (
     <S.ContainerSideBar>
@@ -11,7 +14,7 @@ const SideBar = () => {
         <h2>Henrique Nobre</h2>
       </S.BoxInfoPerfil>
       <S.BoxInfoRigth>
-        <S.ButtonNewTravel onClick={console.log('nova viagem')}>
+        <S.ButtonNewTravel onClick={navigate('/NewTravel')}>
           Nova viagem
         </S.ButtonNewTravel>
       </S.BoxInfoRigth>
