@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 import * as S from './styles'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import '@mapbox/mapbox-gl-directions/src/mapbox-gl-directions.css'
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiamF5c2VhbjEwMDEiLCJhIjoiY2t3ZXlld2xtMDljYzJwbXViOTR2ZnJtMCJ9.IRBDhiDcLdcSCroBDzQ-TA'

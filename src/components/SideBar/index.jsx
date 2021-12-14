@@ -14,7 +14,7 @@ const SideBar = () => {
         <h2>Henrique Nobre</h2>
       </S.BoxInfoPerfil>
       <S.BoxInfoRigth>
-        <S.ButtonNewTravel onClick={navigate('/NewTravel')}>
+        <S.ButtonNewTravel onClick={() => navigate('/NewTravel')}>
           Nova viagem
         </S.ButtonNewTravel>
       </S.BoxInfoRigth>
